@@ -13,12 +13,13 @@ app.use(json());
 const dbName = process.env.DB_NAME;
 const dbPass = process.env.DB_PASSWORD;
 const dbUser = process.env.DB_USER;
+const dbHost = process.env.DB_HOST;
 
 const db = createConnection({
-  host: "localhost",
-  user: dbUser, // Replace with your MySQL username
-  password: dbPass, // Replace with your MySQL password
-  database: dbName, // Replace with your MySQL database name
+  host: dbHost,
+  user: dbUser, 
+  password: dbPass, 
+  database: dbName, 
 });
 
 db.connect((err) => {
